@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Layout Example</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 200px auto; /* Sidebar takes 200px, rest for main content */
+            grid-template-rows: 100px auto; /* Header takes 100px, rest for main content */
+            grid-template-areas:
+                "header header"
+                "sidebar main";
+            min-height: 100vh; /* Ensure the grid takes up the full viewport height */
+        }
+
+        .header {
+            grid-area: header;
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        .main-content {
+            grid-area: main;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <header class="header">Header Content</header>
+        <aside class="sidebar">
+            Sidebar Content
+            <ul>
+                <li>Link 1</li>
+                <li>Link 2</li>
+                <li>Link 3</li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <h1>Main Content</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vestibulum, leo sed ultricies venenatis, nulla sapien sollicitudin est, vel scelerisque risus eros sed velit. Mauris efficitur tempor diam et mattis. Nam dictum orci a justo dictum, sit amet fringilla elit volutpat. Proin ac eros pretium, dapibus est sit amet, scelerisque est. Nam vel dolor eu eros sodales gravida. Integer eu eros feugiat, malesuada purus nec, tincidunt turpis. Proin id aliquet magna. Sed eleifend, lorem eget laoreet laoreet, purus quam vestibulum ipsum, non pharetra nunc nulla a nisi. In hac habitasse platea dictumst. Nullam tempor est nec odio vehicula, vel commodo ligula lobortis. Vestibulum nec purus odio.</p>
+        </main>
+    </div>
+</body>
+</html>
